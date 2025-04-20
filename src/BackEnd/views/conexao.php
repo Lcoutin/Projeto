@@ -1,9 +1,9 @@
 <?php
 // Dados para conexão no banco
-$serverNome = 'JOAO\SQLEXPRESS';
+$serverNome = 'DESKTOP-DL6EQH9\MUSICONNECT';
 $dbNome = 'DbMusicConnect';
-$usuaNome = 'João';
-$senha = 'Jo121218vi!';
+$usuaNome = 'sa';
+$senha = 's666Ks2u';
 $dsn = "sqlsrv:Server=$serverNome;Database=$dbNome";
 //Data Source Name, string de conexão
 // parametros : nome do driver:Nome do servidor;Nome do banco de dados; Porta (opcional)
