@@ -1,0 +1,636 @@
+html {
+    height: 100vh;
+}
+/* Style body */
+body {
+    background-color: var(--body);
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    width: 100%;
+    z-index: 1001;
+    position: fixed;
+    top: 0;
+    background-color: var(--body);
+    padding-top: 20px;
+}
+
+.progress-signup {
+    width: 60%;
+    height: 100%;
+}
+
+.progress-signup h1 {
+    text-align: center;
+}
+
+/* Estilizando a barra de progresso */
+.progress {
+    height: 10px;
+    width: 100%;
+    background-color: var(--bar);
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    height: 10px;
+    width: 0%;
+    background-color: var(--color-dest);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+/* Estilizando os steps */
+.steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.step {
+    width: 20%;
+    text-align: center;
+    font-size: 1.125rem;
+}
+.step.active {
+    color: var(--color-dest);
+}
+
+.step.hidden-step {
+    display: none;
+}
+
+/*Style main*/
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Mantenha apenas uma linha para margin-top */
+    padding-top: 200px;
+    padding-bottom: 20px;
+    width: 100%;
+    height: auto;
+}
+
+fieldset {
+    border: none;
+}
+
+.form-step.hidden {
+    display: none !important;
+}
+
+/*Style form*/
+.form-signup {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--card);
+    border-radius: 5px;
+    padding: 20px;
+    width: 80%;
+}
+
+/*Style objetivo*/
+#form-step-goal {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    height: 240px;
+    box-sizing: border-box;
+    border: none;
+}
+
+
+/*Style top*/
+.form-step-goal-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 20%;
+    text-align: center;
+}
+
+.form-step-goal-top span{
+    display: none;
+}
+
+span {
+    color: var(--erro);
+}
+
+.top h2 {
+    cursor: default;
+    font-size: 32px;
+}
+
+.user-selection {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    box-sizing: border-box;
+    border: none;
+}
+
+.user-selection label div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+
+.user-selection input{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.user-selection input:focus {
+    box-shadow: none !important;
+}
+
+.user-selection h3 {
+    box-sizing: border-box;
+    font-weight: 500;
+    color: var(--font-color-secondary);
+    text-align: center;
+}
+
+.user-selection p {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+}
+
+.select-music, .select-contractor {
+    background-color: var(--card);
+    width: 40%;
+    height: 60%;
+    min-height: 140px;
+    padding: 15px 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 1px var(--border);
+    cursor: pointer;
+
+    transition: 500ms;
+}
+
+.select-music.box-checked, .select-contractor.box-checked {
+    background-color: var(--background-primary);
+    box-shadow: 0 0 4px 1px var(--border);
+}
+
+.select-music:hover, .select-contractor:hover {
+    background-color: var(--background-primary);
+    box-shadow: 0 0 4px 1px var(--border);
+    transition: 500ms;
+}
+
+/* dados pessoais */
+#layout-personal-data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#form-step-personal-data {
+    display: flex;
+    flex-direction: row;
+}
+
+#form-step-personal-data h2 {
+    margin-top: 10px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+#profile-picture-group {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+
+#foto {
+    display: none;
+}
+
+#layout-preview-picture {
+    display: flex;
+}
+
+#preview-picture {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed var(--background-dest);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#botao-foto {
+    color: var(--font-color-secondary);
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+}
+
+#image-preview {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+.info-profile-group {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 50px;
+}
+
+.address {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.obrigatorio {
+    color: var(--erro);
+}
+.form-step-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.form-step-group input, .form-step-group select, .form-step-group textarea{
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    background-color: var(--card);
+    color: var(--font-color-secondary);
+    border-radius: 5px;
+}
+
+.form-step-group input[type="text"] {
+    width: 300px;
+}
+.form-step-group input[type="number"], #cep {
+    width: 120px;
+}
+.form-step-group select {
+    width: 150px;
+    cursor: pointer;
+}
+
+/* Sobre o músico */
+#form-step-about-music {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.selects-skill-genre {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.selects-skill-genre select {
+    width: 200px;
+}
+
+.form-step-group textarea {
+    width: 500px;
+    height: 150px;
+    resize: none;
+}
+
+/* Estilizando os botões */
+.botoes {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    height: 20%;
+}
+
+#botao-voltar {
+    background-color: var(--button-muted);
+    color: var(--font-color-secondary);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    width: 10%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+    box-sizing: border-box;
+}
+
+#botao-voltar:hover {
+    background-color: var(--button-hover);
+    color: var(--font-color-primary);
+}
+
+#botao-avancar{
+    background-color: var(--button);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--font-color-primary);
+    width: 15%;
+    padding: 12px 30px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+    box-sizing: border-box;
+}
+
+#botao-avancar:hover {
+    background-color: var(--button-hover);
+    color: var(--white);
+    transition: .3s;
+}
+
+/* Galeria de Fotos*/
+#form-step-gallery-photos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    border: none;
+}
+
+#gallery-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#add-foto {
+    background-color: var(--button-muted);
+    color: var(--font-color-secondary);
+    font-size: 1.125rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 20%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#add-foto:hover {
+    background-color: var(--button-hover);
+    color: var(--font-color-primary);
+}
+
+#preview-gallery {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color: var(--background-primary);
+    min-height: 15rem;
+    border-radius: 5px;
+    padding: 1rem;
+    gap: 2rem;
+    
+}
+
+.layout-preview-gallery {
+    border-radius: 5px;
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.layout-preview-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bi-x-lg {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1;
+    background-color: var(--background-secondary);
+    color: var(--font-color-primary);
+    font-size: 1.1rem;
+    border-radius: 0.313rem;
+    padding: 0 0.300rem;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.bi-x-lg:hover{
+    background-color: var(--background-dest);
+    transition: .2s ease;
+}
+
+.char-count {
+    color: var(--font-color-muted);
+}
+
+
+/*Style modal-help*/
+.overlay-modal {
+    cursor: default;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 99999;
+    background-color: var(--black40);
+}
+
+.modal-help {
+    text-align: center;
+    width: 500px;
+    padding: 20px 30px;
+    font-size: 14px;
+    background-color: var(--navy-blue);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 1px var(--black40);
+}
+
+.modal-help .music,
+.modal-help .contractor {
+    background-color: var(--dark-navy-blue);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
+    height: 80%;
+}
+
+.modal-help h3 {
+    font-weight: 500;
+    color: var(--white);
+}
+
+.modal-help .music p,
+.modal-help .contractor p {
+    color: var(--light-grey);
+    margin-top: 20px;
+}
+
+.button-close {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-close button {
+    width: 50%;
+    background-color: var(--dark-navy-blue);
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button-close button:hover {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+/*Style modal-cancel*/
+.modal-cancel {
+    display: none;
+}
+
+.modal-cancel dialog {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 500px;
+    height: 200px;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -70%);
+    padding: 20px;
+    position: absolute;
+    background-color: var(--white);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 1px var(--black40);
+}
+
+.modal-cancel dialog h3 {
+    color: var(--black);
+    font-weight: 500;
+    font-size: 18px;
+    cursor: default;
+    height: 30%;
+}
+
+.modal-cancel dialog p {
+    cursor: default;
+    height: 30%;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.modal-cancel .button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 40%;
+}
+
+.modal-cancel .button-yes {
+    width: 30%;
+    background-color: var(--dark-navy-blue);
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.modal-cancel .button-yes:hover {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+
+.modal-cancel .button-not {
+    width: 30%;
+    background-color: var(--white);
+    color: var(--black);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.modal-cancel .button-not:hover {
+    background-color: var(--navy-blue);
+    border-color: var(--navy-blue);
+    color: var(--white);
+}

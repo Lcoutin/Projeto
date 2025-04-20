@@ -1,0 +1,145 @@
+/* importação do global */
+@import url(../global.css);
+
+/* Style body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--body);
+    height: 100vh;
+}
+
+
+/*Style main*/
+
+main{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+    position: relative;
+}
+
+.login-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    position: relative;
+    
+}
+
+.card {
+    background-color: var(--card);
+    padding: 40px;
+    box-shadow: 0 0 1px 1px var(--border);
+    border-radius: 5px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 40px;
+    cursor: default;
+    font-weight: 500;
+    color: var(--font-color-secondary);
+}
+
+.login-error{
+    font-size: 13px;
+    color: var(--erro);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.span-required {
+    font-size: 12px;
+    color: var(--erro);
+    text-align: left;
+    margin: 5px 0 0 5px;
+    display: none;
+}
+.card input {
+    width: 100%;
+    padding: 12px;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    color: var(--font-color-secondary);
+    box-sizing: border-box;
+    transition: .5s;
+}
+
+.card input:focus{
+    border-color: var(--border-dest);
+}
+
+.card button {
+    background-color: var(--button);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--font-color-primary);
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+    box-sizing: border-box;
+}
+
+.card button:hover {
+    background-color: var(--button-hover);
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--font-color-secondary);
+    margin-top: 20px;
+    cursor: default;
+}
+
+.card p a {
+    color: var(--font-color-dest);
+    text-decoration: none;
+    outline: none !important;
+    border: none;
+}
+
+.card p a:focus {
+    outline: none;
+}
+
+.card p a:active{
+    outline: none;
+    border: none;
+}
+
+.card p a:hover{
+    text-decoration:underline;
+}
+
+.login-right {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 50%;
+}
+.login-img{
+    width: 100%;
+    max-width: 400px;
+}

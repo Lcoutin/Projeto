@@ -1,0 +1,8 @@
+CREATE DATABASE DbMusicConnect
+ON PRIMARY (
+NAME=DbMusicConnect,
+FILENAME='C:\SQLBancos\DbMusicConnect.MDF',
+SIZE=6MB,
+MAXSIZE=15MB,
+FILEGROWTH=10%
+)

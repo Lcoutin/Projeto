@@ -1,0 +1,8 @@
+{
+    "name": "seu-usuario/musiconnect",
+    "description": "Projeto MusiConnect",
+    "require": {
+      "vlucas/phpdotenv": "^5.3"
+    }
+  }
+  
