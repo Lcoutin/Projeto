@@ -43,7 +43,7 @@
                         <span class="span-required">Senha deve ter no mínimo 8 caracteres</span>
                     </div>
                     <html>
-  <head>
+                    <head>
     <title>reCAPTCHA demo: Simple page</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
